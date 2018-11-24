@@ -1,10 +1,18 @@
 ﻿namespace TheGame.Core.Weapons
 {
-	public class Axe : Weapon
+	public sealed class Axe : Weapon, IWeapon
 	{
-		public Axe(string name, int attackDamage)
-			: base(name, attackDamage, 0.5)
+		public int ArmorPenetration { get; }
+
+		public Axe(string name, int attackDamage, int armorPenetration)
+			: base(name, attackDamage)
 		{
+			ArmorPenetration = armorPenetration;
+		}
+
+		public void Hit(IAttackable target)
+		{
+			target.TakeDamage(AttackDamage);
 		}
 	}
 }

@@ -2,18 +2,18 @@
 
 namespace TheGame.Core.Potions
 {
-	public class HealthPotion : Potion, IUsable
+	public sealed class HealthPotion : Potion, IUsable
 	{
-		public HealthPotion(string name, int restorePoints)
-			: base(name, restorePoints)
+		public HealthPotion(string name, int points)
+			: base(name, points)
 		{
 		}
 
 		public void Use(Unit unit)
 		{
-			unit.HealthPoints = unit.HealthPoints + RestorePoints > unit.MaxHealth
+			unit.HealthPoints = unit.HealthPoints + Points > unit.MaxHealth
 				? unit.MaxHealth
-				: unit.HealthPoints + RestorePoints;
+				: unit.HealthPoints + Points;
 		}
 	}
 }

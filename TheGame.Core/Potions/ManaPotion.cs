@@ -2,18 +2,18 @@
 
 namespace TheGame.Core.Potions
 {
-	public class ManaPotion : Potion, IUsable
+	public sealed class ManaPotion : Potion, IUsable
 	{
-		public ManaPotion(string name, int restorePoints)
-			: base(name, restorePoints)
+		public ManaPotion(string name, int points)
+			: base(name, points)
 		{
 		}
 
 		public void Use(Unit unit)
 		{
-			unit.ManaPoints = unit.ManaPoints + RestorePoints > unit.MaxMana
+			unit.ManaPoints = unit.ManaPoints + Points > unit.MaxMana
 				? unit.MaxMana
-				: unit.ManaPoints + RestorePoints;
+				: unit.ManaPoints + Points;
 		}
 	}
 }

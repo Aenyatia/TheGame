@@ -2,13 +2,13 @@
 {
 	public abstract class Potion
 	{
-		public string Name { get; set; }
-		public int RestorePoints { get; set; }
+		public string Name { get; protected set; }
+		public int Points { get; protected set; }
 
-		protected Potion(string name, int restorePoints)
+		protected Potion(string name, int points)
 		{
 			Name = name;
-			RestorePoints = restorePoints;
+			Points = points;
 		}
 	}
 }
