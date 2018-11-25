@@ -1,12 +1,14 @@
 ﻿using FluentAssertions;
 using TheGame.Core;
-using TheGame.Core.Armors;
+using TheGame.Core.Components;
 using TheGame.Core.Enemies;
 using TheGame.Core.People;
 using TheGame.Core.Potions;
 using TheGame.Core.Services;
 using TheGame.Core.Weapons;
 using Xunit;
+using Armor = TheGame.Core.Armors.Armor;
+using Sword = TheGame.Core.Weapons.Sword;
 
 namespace TheGame.Tests
 {
@@ -34,6 +36,11 @@ namespace TheGame.Tests
 				.WithDescription("Goddes item.")
 				.WithValue(40)
 				.Build();
+
+			var lightArmor = LightArmorBuilder.Create("a", 12)
+				.BladeResistance(5)
+				.FireResistance(10)
+				.LightningResistance(10);
 
 			var healthPotion = new HealthPotion("Small HP", 10);
 			var manaPotion = new ManaPotion("Small MP", 5);
