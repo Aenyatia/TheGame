@@ -1,8 +1,8 @@
 ﻿namespace TheGame.Core.Weapons
 {
-	public sealed class Axe : Weapon, IWeapon
+	public sealed class Axe : Weapon
 	{
-		public int ArmorPenetration { get; }
+		public double ArmorPenetration { get; }
 
 		public Axe(string name, int attackDamage, int armorPenetration)
 			: base(name, attackDamage)
@@ -10,9 +10,11 @@
 			ArmorPenetration = armorPenetration;
 		}
 
-		public void Hit(IAttackable target)
+		public override void Hit(IAttackable target)
 		{
-			target.TakeDamage(AttackDamage);
+			var pen = (int)(target.Defense * ArmorPenetration);
+
+			target.TakeDamage(AttackDamage - (target.Defense - pen));
 		}
 	}
 }

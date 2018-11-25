@@ -7,7 +7,7 @@
 		{
 		}
 
-		public void Hit(IAttackable target)
+		public override void Hit(IAttackable target)
 		{
 			target.TakeDamage(AttackDamage);
 		}
