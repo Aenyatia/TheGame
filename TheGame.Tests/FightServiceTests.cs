@@ -25,17 +25,17 @@ namespace TheGame.Tests
 			var sword = new Sword("Excalibur", 25);
 			var bow = new Bow("Nordmar Curse", 30);
 
-			var swordBuilder = new SwordBuilder();
-			var weapon1 = swordBuilder
-				.WithName("Innos Tear")
-				.WithDescription("Goddes item.")
-				.WithValue(20)
-				.Build();
-			var weapon2 = swordBuilder
-				.WithName("Belial Rage")
-				.WithDescription("Goddes item.")
-				.WithValue(40)
-				.Build();
+			//var swordBuilder = new SwordBuilder();
+			//var weapon1 = swordBuilder
+			//	.WithName("Innos Tear")
+			//	.WithDescription("Goddes item.")
+			//	.WithValue(20)
+			//	.Build();
+			//var weapon2 = swordBuilder
+			//	.WithName("Belial Rage")
+			//	.WithDescription("Goddes item.")
+			//	.WithValue(40)
+			//	.Build();
 
 			var lightArmor = LightArmorBuilder.Create("a", 12)
 				.BladeResistance(5)
@@ -84,7 +84,7 @@ namespace TheGame.Tests
 			geralt.HealthPoints.Should().NotBe(60);
 			geralt.HealthPoints.Should().Be(50);
 
-			geralt.EquipWeapon(weapon1);
+			//geralt.EquipWeapon(weapon1);
 			geralt.AttactTarget(banditMelee);
 			banditMelee.HealthPoints.Should().Be(45);
 		}

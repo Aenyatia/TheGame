@@ -22,37 +22,37 @@ namespace TheGame.Core.Components
 
 		public LightArmorBuilder BladeResistance(int value)
 		{
-			_resistances.Add(new Resistance(DamageType.Blade, value));
+			_resistances.Add(Resistance.BladeResistance(value));
 			return this;
 		}
 
 		public LightArmorBuilder ImpactResistance(int value)
 		{
-			_resistances.Add(new Resistance(DamageType.Impact, value));
+			_resistances.Add(Resistance.ImpactResistance(value));
 			return this;
 		}
 
 		public LightArmorBuilder MissilesResistance(int value)
 		{
-			_resistances.Add(new Resistance(DamageType.Missiles, value));
+			_resistances.Add(Resistance.MissilesResistance(value));
 			return this;
 		}
 
 		public LightArmorBuilder FireResistance(int value)
 		{
-			_resistances.Add(new Resistance(DamageType.Fire, value));
+			_resistances.Add(Resistance.FireResistance(value));
 			return this;
 		}
 
 		public LightArmorBuilder IceResistance(int value)
 		{
-			_resistances.Add(new Resistance(DamageType.Ice, value));
+			_resistances.Add(Resistance.IceResistance(value));
 			return this;
 		}
 
 		public LightArmorBuilder LightningResistance(int value)
 		{
-			_resistances.Add(new Resistance(DamageType.Lightning, value));
+			_resistances.Add(Resistance.LightningResistance(value));
 			return this;
 		}
 

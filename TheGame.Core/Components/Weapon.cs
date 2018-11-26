@@ -5,10 +5,13 @@
 		public string Name { get; }
 		public int Value { get; }
 
-		protected Weapon(string name, int value)
+		public Damage Damage { get; set; }
+
+		protected Weapon(string name, int value, Damage damage)
 		{
 			Name = name;
 			Value = value;
+			Damage = damage;
 		}
 	}
 }

@@ -1,13 +1,9 @@
-﻿using System.Collections.Generic;
-
-namespace TheGame.Core.Components
+﻿namespace TheGame.Core.Components
 {
-	public class Sword : Weapon
+	public sealed class Sword : Weapon
 	{
-		public IList<Damage> Damages { get; set; }
-
-		protected Sword(string name, int value)
-			: base(name, value)
+		public Sword(string name, int value, Damage damage)
+			: base(name, value, damage)
 		{
 		}
 	}

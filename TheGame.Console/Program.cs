@@ -6,20 +6,36 @@ namespace TheGame.Console
 	{
 		public static void Main(string[] args)
 		{
-			var armor0 = LightArmorBuilder.Create("Robe0", 1)
+			var dagger = BronBuilder.Create("Dagger", 10, WeaponType.Dagger)
+				.DodajWymaganie(Attribute.Dexterity(10))
+				.DodajWymaganie(Attribute.Strength(12))
+				.DodajObrazenia(Damage.BladeDamage(100))
 				.Build();
 
-			LightArmor armor1 = LightArmorBuilder.Create("Robe1", 100);
-
-			var armor2 = LightArmorBuilder
-				.Create("Robe2", 200)
-				.BladeResistance(10)
-				.FireResistance(10)
+			var sword = BronBuilder.Create("Sword", 20, WeaponType.Sword)
+				.DodajWymaganie(Attribute.Strength(50))
+				.DodajObrazenia(Damage.BladeDamage(100))
+				.DodajObrazenia(Damage.IceDamage(10))
+				.DodajOdpornosc(Resistance.IceResistance(10))
 				.Build();
 
-			var armor3 = LightArmorBuilder
-				.Create("Robe3", 300)
+			var axe = BronBuilder.Create("Axe", 30, WeaponType.Axe)
+				.DodajWymaganie(Attribute.Strength(200))
+				.DodajWymaganie(Attribute.StaminaPoints(500))
+				.DodajObrazenia(Damage.ImpactDamage(200))
+				.DodajAtrybut(Attribute.Strength(20))
+				.DodajOdpornosc(Resistance.MissilesResistance(5))
 				.Build();
+
+			var bow = BronBuilder.Create("Bow", 1, WeaponType.Bow)
+				.Build();
+
+			System.Console.WriteLine(dagger);
+			System.Console.WriteLine(sword);
+			System.Console.WriteLine(axe);
+			System.Console.WriteLine(bow);
+
+			System.Console.ReadLine();
 		}
 	}
 }

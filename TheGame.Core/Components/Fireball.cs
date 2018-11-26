@@ -6,11 +6,7 @@
 
 		public void T()
 		{
-			Damage = new Damage
-			{
-				Value = 10,
-				Type = DamageType.Fire
-			};
+			Damage = Damage.FireDamage(10);
 		}
 	}
 }
