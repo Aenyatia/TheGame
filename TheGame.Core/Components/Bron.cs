@@ -25,6 +25,13 @@ namespace TheGame.Core.Components
 			Odpornosci = odp;
 		}
 
+		public void Attack(Player player, Player enemy)
+		{
+			var dmg = AttackService.Attack(player, enemy);
+
+			enemy.TakeDamage(dmg);
+		}
+
 		public override string ToString()
 		{
 			var result = string.Empty;

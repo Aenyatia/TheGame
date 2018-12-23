@@ -24,6 +24,7 @@
 			return this;
 		}
 
+
 		public HeavyArmor Build()
 		{
 			return new HeavyArmor(_name, _value, _blade, 0, 0, 0, 0, 0);

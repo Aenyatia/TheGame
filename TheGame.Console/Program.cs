@@ -10,6 +10,7 @@ namespace TheGame.Console
 				.DodajWymaganie(Attribute.Dexterity(10))
 				.DodajWymaganie(Attribute.Strength(12))
 				.DodajObrazenia(Damage.BladeDamage(100))
+				.DodajObrazenia(Damage.FireDamage(50))
 				.Build();
 
 			var sword = BronBuilder.Create("Sword", 20, WeaponType.Sword)
@@ -30,10 +31,21 @@ namespace TheGame.Console
 			var bow = BronBuilder.Create("Bow", 1, WeaponType.Bow)
 				.Build();
 
+			var armor = LightArmorBuilder.Create("Armor", 100)
+				.BladeResistance(80)
+				.FireResistance(10);
+
 			System.Console.WriteLine(dagger);
 			System.Console.WriteLine(sword);
 			System.Console.WriteLine(axe);
 			System.Console.WriteLine(bow);
+
+			var player = new Player { Bron = dagger, Armor = armor };
+			var enemy = new Player { Bron = dagger, Armor = armor };
+
+			player.Attack(enemy);
+
+			System.Console.WriteLine(enemy.HealthPoints.CurrentHealthPoints);
 
 			System.Console.ReadLine();
 		}
